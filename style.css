@@ -26,7 +26,7 @@ body{
     align-items: center;
     justify-content: space-between;
 
-    padding: 20px 10px;
+    padding: 25px 30px 10px;
 }
 
 header .currentDate{
@@ -60,10 +60,7 @@ header .icons span:hover{
     font-weight: 700;
 }
 
-.calender .days li{
-    margin-bottom: 20px;
-    z-index: 1;
-}
+
 
 .calender ul{
     display: flex;
@@ -72,45 +69,52 @@ header .icons span:hover{
     text-align: center;
 }
 
-.calender ul li{
-    position: relative;
+.calender li{
     list-style: none;
     margin-top: 1rem;
     width: calc(100% / 7);
-    cursor: pointer;
-}
+    font-size: 1.07rem;
 
-.calender .days li::before{
-    content: '';
-    width: 40px;
-    height: 40px;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    transform: translate(-50%, -50%);
     
-    border-radius: 50%;
+}
 
+.calender .days li{
+    margin-top: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.days li::before{
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    height: 40px;
+    width: 40px;
     z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.calender .days li:hover::before{
+/* .calender .days li:hover::before{
     background: #f2f2f2;
-}
+} */
 
-.calender .days .active{
+.calender .days li.active{
      color: #fff;
   
 }
 
-.calender .days .inactive{
+.calender .days li.inactive{
     color: #aaa;
 }
 
-.calender .days .active::before{
-   
+.days .active::before{
     background-color: tomato;
 }
+
+.days li:not(.active):hover::before{
+    background: #f2f2f2;
+  }
 
